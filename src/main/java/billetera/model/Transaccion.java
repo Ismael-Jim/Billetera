@@ -1,13 +1,12 @@
 package billetera.model;
 
-import billetera.controller.UserController;
-import billetera.model.Moneda;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "transaccion")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +21,8 @@ public class Transaccion {
     // "INGRESO" o "EGRESO"
     private String tipo;
 
-    // Relación con Usuario y Moneda
+    // Relación con User y Moneda
+    // El atributo se llama "user" para coincidir con el mappedBy en la entidad User
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private User user;

@@ -24,4 +24,8 @@ public class ViewController {
         // model.addAttribute("transacciones", transaccionService.listarTransacciones());
         return "transacciones";
     }
+    @GetMapping("/index")
+    public String mostrarIndex() {
+        return "index";
+    }
 }
